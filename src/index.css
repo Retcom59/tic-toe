@@ -1,4 +1,4 @@
-body {
+* body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -9,4 +9,100 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.game-container {
+  display: flex;
+}
+
+.game-board {
+  flex: 1;
+  padding: 20px;
+}
+
+.game-info {
+  flex: 0.5;
+  padding: 18px;
+}
+
+.move-lists {
+  text-align: center;
+  list-style: none;
+}
+
+.game-info li {
+  padding-top: 5px;
+}
+
+.board-surface {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px; /* Adjust as needed */
+  height: 300px;
+}
+
+.board-row {
+  display: flex;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  color: #f3f3f3;
+  background-color: #7a9bad;
+  border-radius: 8px;
+  font-size: 40px;
+  border-color: #202122;
+}
+
+.description {
+  color: #f3f3f3;
+  background-color: #7a9bad;
+  border-color: #525252;
+  padding: 0.25rem 0.5rem;
+  font-size: 15px;
+  line-height: 1.5;
+  border-radius: 8px;
+  width: 80px;
+}
+
+.description:hover {
+  color: #7a9bad;
+  background-color: #464646;
+  border-color: #ffffff;
+}
+.square:hover {
+  color: #7a9bad;
+  background-color: #464646;
+  border-color: #ffffff;
+}
+
+.description:focus {
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+}
+
+.square:focus {
+  box-shadow: 0 0 0 0.2rem rgba(210, 210, 210, 0.5);
+}
+
+.description:disabled {
+  color: #7a9bad;
+  background-color: #464646;
+  border-color: #ffffff;
+}
+
+.square:disabled {
+  color: #7a9bad;
+  background-color: #464646;
+  border-color: #ffffff;
+}
+
+.description:not(:disabled):not(.disabled):active,
+.description:not(:disabled):not(.disabled).active,
+.show > .description.dropdown-toggle {
+  color: #7a9bad;
+  background-color: #464646;
+  border-color: #ffffff;
 }

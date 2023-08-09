@@ -48,7 +48,7 @@ function Board({ xIsNext, squares, onPlay }) {
   }
 
   return (
-    <>
+    <div className="board-surface">
       <div className="board-row">
         <Square svalue={squares[0]} onSquereClick={() => handleClick(0)} />
         <Square svalue={squares[1]} onSquereClick={() => handleClick(1)} />
@@ -64,7 +64,7 @@ function Board({ xIsNext, squares, onPlay }) {
         <Square svalue={squares[7]} onSquereClick={() => handleClick(7)} />
         <Square svalue={squares[8]} onSquereClick={() => handleClick(8)} />
       </div>
-    </>
+    </div>
   );
 }
 
@@ -89,25 +89,27 @@ export default function Game() {
   const moves = history.map((squares, move) => {
     let description;
     if (move > 0) {
-      description = "Go to move #" + move;
+      description = move + " ";
     } else {
-      description = "Go to game start";
+      description = "START";
     }
     return (
       <li key={move}>
-        <button onClick={() => jumpTo(move)}>{description}</button>
+        <button className="description" onClick={() => jumpTo(move)}>
+          {description}
+        </button>
       </li>
     );
   });
 
   return (
-    <div className="game">
+    <div className="game-container">
       <div className="game-board">
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
 
       <div className="game-info">
-        <ol>{moves}</ol>
+        <ul className="move-lists">{moves}</ul>
       </div>
     </div>
   );
